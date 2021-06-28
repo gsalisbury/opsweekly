@@ -87,7 +87,7 @@ function getOnCallNotifications($name, $global_config, $team_config, $start, $en
                 $running_total += count($incidents->incidents);
                 logline("Running total: " . $running_total);
                 foreach ($incidents->incidents as $incident) {
-                    $time = strtotime($incident->created_on);
+                    $time = strtotime($incident->created_at);
                     $state = $incident->urgency;
                     // try to determine and set the service
                     if (isset($incident->trigger_summary_data->subject)) {
